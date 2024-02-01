@@ -1,7 +1,7 @@
 import keys from "./keys.js";
 
 // INITIALIZE MAPBOX
-mapboxgl.accessToken = keys.mapbox;
+mapboxgl.accessToken = keys.mapboxApiKey;
 const map = new mapboxgl.Map({
     container: 'map', // container ID
 // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
@@ -38,7 +38,7 @@ const updateButton = document.getElementById('update-forecast-btn');
 // NEW CITY 5 DAY FORECAST/CURRENT FORECAST
 function updateForecast() {
     const cityInput = document.getElementById('mapbox-search').value;
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&appid=${keys.weatherMap}&units=imperial`;
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&appid=${keys.weatherApiKey}&units=imperial`;
 
     fetch(apiUrl)
         .then(response => response.json())
@@ -57,7 +57,7 @@ function updateForecast() {
             }
             marker.setLngLat([lon, lat]).addTo(map);
             // Fetch forecast data for the searched city
-            const forecastApiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityInput}&appid=${keys.weatherMap}&units=imperial`;
+            const forecastApiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityInput}&appid=${keys.weatherApiKey}&units=imperial`;
             return fetch(forecastApiUrl);
         })
         .then(response => response.json())
@@ -108,7 +108,7 @@ searchButton.addEventListener('click', updateForecast);
 const BASE_WEATHER_URL = 'https://api.openweathermap.org/data/2.5/weather?'
 const BASE_FORECAST_URL = 'https://api.openweathermap.org/data/2.5/forecast?'
 // Fetch forecast data using fetch API
-fetch(`${BASE_FORECAST_URL}lat=${47.60537214369371}&lon=${-122.32423484983421}&appid=${keys.weatherMap}&units=imperial`)
+fetch(`${BASE_FORECAST_URL}lat=${47.60537214369371}&lon=${-122.32423484983421}&appid=${keys.weatherApiKey}&units=imperial`)
     .then(response => response.json())
     .then(data => {
         // console.log(data.list)
@@ -183,7 +183,7 @@ fetch(`${BASE_FORECAST_URL}lat=${47.60537214369371}&lon=${-122.32423484983421}&a
 
 // This is for the top card, current city forecast.
     function fetchAndUpdateCurrentCityWeather() {
-        $.get(BASE_WEATHER_URL + `lat=${47.60537214369371}&lon=${-122.32423484983421}&appid=${keys.weatherMap}&units=imperial`).done((data) => {
+        $.get(BASE_WEATHER_URL + `lat=${47.60537214369371}&lon=${-122.32423484983421}&appid=${keys.weatherApiKey}&units=imperial`).done((data) => {
             updateCurrentCityForecast(data);
         });
     }
