@@ -190,6 +190,48 @@ fetch(`${BASE_FORECAST_URL}lat=${47.60537214369371}&lon=${-122.32423484983421}&a
 // Call the function to update the current city weather when the page loads
     fetchAndUpdateCurrentCityWeather();
 
+// const videoSources = {
+//     'Clear': 'url:',
+//     'Rain': '/img/rain.mp4',
+//     'Clouds': '/img/clouds.mp4'
+// };
+// function updateBackgroundVideo(weatherCondition) {
+//     const videoElement = document.getElementById('background-video');
+//
+//     // Check if a video source exists for the current weather condition
+//     if (videoSources.hasOwnProperty(weatherCondition)) {
+//         // Set the video source based on the weather condition
+//         videoElement.src = videoSources[weatherCondition];
+//         // Play the video
+//         videoElement.play();
+//     } else {
+//         // If no specific video source is found, default to a generic background video
+//         videoElement.src = 'img/clear.mp4';
+//         // Play the video
+//         videoElement.play();
+//     }
+// }
+//
+// // Fetch weather data from OpenWeatherMap API and update background video
+// function fetchAndUpdateWeather() {
+//     const cityInput = document.getElementById('mapbox-search').value;
+//     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&appid=${keys.weatherApiKey}&units=imperial`;
+//
+//     // Make API call to fetch weather data
+//     fetch(apiUrl)
+//         .then(response => response.json())
+//         .then(data => {
+//             // Extract weather condition from data (e.g., data.weather[0].main)
+//             const weatherCondition = data.weather[0].main;
+//             // Update background video based on weather condition
+//             updateBackgroundVideo(weatherCondition);
+//         })
+//         .catch(error => {
+//             console.error('Error fetching weather data:', error);
+//             // Handle errors
+//         });
+// }
+
 
 
 
