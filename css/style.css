@@ -1,5 +1,17 @@
 /*BACKGROUND COLOR*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+/* Ensure the container fluid fills the viewport */
+.container-fluid {
+    width: 100%;
+    max-width: 100%; /* Set maximum width to prevent overflow */
+    overflow-x: hidden; /* Hide horizontal overflow */
+    padding: 0 20px;
+}
 body{
     width: 100%;
     background-color: #6e9277;
@@ -19,6 +31,12 @@ body{
 .form{
     background-color: #6e9277;
     margin-left: 20px;
+}
+/*.row{*/
+/*    justify-content: center;*/
+/*}*/
+.card-header{
+    background-color: moccasin;
 }
 .logo{
     width: 200px;
@@ -47,11 +65,11 @@ body{
     font-size: 20px;
     flex-wrap: wrap;
     color: black;
-    opacity: 0.5;
+    /*opacity: 0.5;*/
 }
-#insert-weather:hover {
-    opacity: 1.0;
-}
+/*#insert-weather:hover {*/
+/*    opacity: 1.0;*/
+/*}*/
 
 ul{
     list-style: none;
@@ -92,4 +110,12 @@ input{
 }
 .row-top, .col-forecast{
     margin-left: 20px;
+}
+@media (max-width: 1024px) {
+    .col-md-6 {
+        width: 100%; /* Set the width of each column to 100% */
+    }
+    .form input {
+        width: 300px; /* Adjust the width of the input field */
+    }
 }

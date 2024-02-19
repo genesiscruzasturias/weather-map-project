@@ -75,7 +75,7 @@ function updateForecast() {
             let html = '';
 
             for (let i = 0; i < 5; i++) {
-                const forecastData = data.list[i * 8];
+                const forecastData = data.list[i];
                 const date = new Date(forecastData.dt * 1000);
                 const dayOfWeek = date.toLocaleDateString('en-US', { weekday: 'long' });
                 const weatherIconUrl = `https://openweathermap.org/img/wn/${forecastData.weather[0].icon}@2x.png`;
@@ -85,7 +85,7 @@ function updateForecast() {
 <ul className="list-group list-group-flush">
 <li className="list-group-item">${dayOfWeek}</li>
 <li className="list-group-item">Main: ${forecastData.main.temp.toFixed(0)}°F</li>
-<li className="list-group-item">Low: ${forecastData.main.temp_min}°F</li>
+<li className="list-group-item">Low: ${forecastData.main.temp_min.toFixed(0)}°F</li>
 <li className="list-group-item">${forecastData.weather[0].main}</li>
 <li className="list-group-item"><img src="${weatherIconUrl}" alt="weather-icon"></li>
 </ul>
@@ -139,7 +139,7 @@ fetch(`${BASE_FORECAST_URL}lat=${47.60537214369371}&lon=${-122.32423484983421}&a
                 <ul className="list-group list-group-flush">
                     <li className="list-group-item">${dayOfWeek}</li>
                     <li className="list-group-item">Main: ${forecastData.main.temp.toFixed(0)}°F</li>
-                    <li class="list-group-item">Low: ${forecastData.main.temp_min}°F</li>
+                    <li class="list-group-item">Low: ${forecastData.main.temp_min.toFixed(0)}°F</li>
                     <li className="list-group-item">${forecastData.weather[0].main}</li>
                     <li className="list-group-item"><img src="${weatherIconUrl}" alt="weather-icon"></li>
                 </ul>
