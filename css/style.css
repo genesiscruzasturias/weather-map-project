@@ -2,23 +2,28 @@
 
 body{
     width: 100%;
-    background-color: darkslategray;
+    background-color: #6e9277;
 
 }
 .container-fluid{
-    background-color: darkslategray;
+    background-color: #6e9277;
     padding: 0;
 }
 .navbar.bg-body-tertiary {
-    background-color: darkslategray !important;
+    background-color: #6e9277 !important;
 }
 .btn-primary{
-    background-color: darkslategray;
+    background-color: #6e9277;
     color: white;
 }
 .form{
-    background-color: darkslategray;
+    background-color: #6e9277;
     margin-left: 20px;
+}
+.logo{
+    width: 200px;
+    height: 250px;
+    margin-top: -70px;
 }
 .city-forecast{
     display: flex;
@@ -27,6 +32,9 @@ body{
 }
 .city-temperature{
     font-size: 40px;
+}
+.nav-title{
+    color: palegreen;
 }
 
 /*STYLE FOR THE CURRENT/SEARCHED CITY FORECAST*/

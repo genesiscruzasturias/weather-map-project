@@ -11,7 +11,9 @@ const map = new mapboxgl.Map({
 });// Add the control to the map.
 const geocoder = new MapboxGeocoder({
     accessToken: mapboxgl.accessToken,
-    mapboxgl: mapboxgl
+    mapboxgl: mapboxgl,
+    types: 'place', // Restrict results to places only
+    autocomplete: true // Enable autocomplete
 });
 // INITIALIZE MARKER FOR MAPBOX
 const marker = new mapboxgl.Marker({
@@ -19,6 +21,13 @@ const marker = new mapboxgl.Marker({
 })
     .setLngLat([-122.33178089059577, 47.60769856291158])
     .addTo(map);
+
+// Initialize Mapbox Geocoder with autocomplete feature
+// const geocoderLetters = new MapboxGeocoder({
+//     accessToken: mapboxgl.accessToken,
+//     mapboxgl: mapboxgl,
+//
+// });
 
 // return a LngLat object such as {lng: 0, lat: 0}
 // var {lng,lat} = map.getCenter();
@@ -188,5 +197,11 @@ fetch(`${BASE_FORECAST_URL}lat=${47.60537214369371}&lon=${-122.32423484983421}&a
             updateCurrentCityForecast(data);
         });
     }
+const updateButtonTwo = document.getElementById('update-forecast-btn');
+updateButtonTwo.addEventListener('click', () => {
+    const cityInput = document.getElementById('mapbox-search').value;
+    updateForecast(cityInput);
+});
+
 // Call the function to update the current city weather when the page loads
     fetchAndUpdateCurrentCityWeather();
