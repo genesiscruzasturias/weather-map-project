@@ -9,13 +9,13 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div class="page-wrapper">
-    <div class="container-fluid">
-        <div class="row-top">
-        <!--NAVBAR-->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Navbar -->
             <nav class="navbar bg-body-tertiary">
                 <div class="container-fluid">
-                        <!--SEARCH FOR A CITY INPUT/BUTTON-->
+                    <h1>Cruzzn Weather</h1>
                     <div class="form">
                         <input id="mapbox-search" type="text">
                         <button id="update-forecast-btn" class="btn btn-primary">Update Forecast</button>
@@ -23,40 +23,32 @@
                 </div>
             </nav>
         </div>
-            <div class="row-top ">
-                <div class="col">
-                    <!--SEATTLE AND SEARCHED CITY CURRENT FORECAST-->
-                    <div class="card-top mb-3" id="insert-weather-img" >
-                        <h3>Today's Forecast</h3>
-                        <div class="insert-weather-img"></div>
-                        <div class="card-body">
-                            <div id="insert-weather"></div>
-                            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-                        </div>
-
-                    </div>
-                    <!--MY HANDY, DANDY MAP-->
-                    <div id="geocoder" class="geocoder"></div>
-                    <div id="map"></div>
-                    <pre id="coordinates" class="coordinates"></pre>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <!-- Current Forecast -->
+            <div class="card mb-3">
+                <h3 class="card-header">Today's Forecast</h3>
+                <div class="card-body">
+                    <div id="insert-weather"></div>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                 </div>
             </div>
-                    <!--SEATTLE AND SEARCHED CITY 5 DAY FORECAST-->
-                    <div class="col-forecast">
-                        <h3>5-day Forecast</h3>
-                        <div id="insert-forecast" class="insert-forecast d-flex"></div>
-<!--                        &lt;!&ndash;SEARCH FOR A CITY INPUT/BUTTON&ndash;&gt;-->
-<!--                        <input id="mapbox-search" type="text">-->
-<!--                        <button id="update-forecast-btn" class="btn btn-primary">Update Forecast</button>-->
-                    </div>
-                </div>
 
+        </div>
+        <div class="col-md-6">
+            <!-- 5-Day Forecast -->
+            <div class="card">
+                <h3 class="card-header">5-Day Forecast</h3>
+                <div class="card-body">
+                    <div id="insert-forecast" class="d-flex"></div>
+                </div>
             </div>
-<video id="background-video" autoplay loop muted style="position: fixed; right: 0; bottom: 0; min-width: 100%; min-height: 100%; width: auto; height: auto; z-index: -1;">
-    <!-- Fallback content in case the video cannot be played -->
-    <source src="" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
+        </div>
+    </div>
+    <!-- Map -->
+    <div id="map"></div>
+</div>
 <!--GEOCODER-->
 <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
 <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
